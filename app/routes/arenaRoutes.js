@@ -12,10 +12,10 @@ arenaRouter.use(function(req,res,next){
 	// else, next ()
 	next()
 })
-// set up index/get for api router
+// set up index/get for arena router
 arenaRouter.route('/')
 	.get(arenasController.index)
-	// for creating a new user
+	// for creating a new arena
 	.post(arenasController.create)
 
 
