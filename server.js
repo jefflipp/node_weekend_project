@@ -8,19 +8,22 @@ var bodyParser = require('body-parser')//for getting the
 var morgan = require('morgan')//for logging errors
 var mongoose = require('mongoose')
 var Arena = require('./app/models/Arena')//require the Arena model
+var arenaRouter = require('./app/routes/arenaRoutes')
 // var Team = require('./app/models/Team')//require the Arena model
-DB = 'mongodb://localhost:27017/weekend_project' // connects our local db on port 27017
 var DB = process.env.MONGOLAB_URL || 'monodb://localhost:27017/weekend_project'
-port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 mongoose.connect('localhost:27017/weekend_project')
 
+// APP CONFIGURATION
+// =================
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(morgan('dev'))
 
-
-
-
-
-
+// tell app to use apiRouter when we go to 
+// localhost:8080/api
+app.use('/arenas', arenaRouter)
 
 
 // RUN THE SERVER
