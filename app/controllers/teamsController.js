@@ -3,74 +3,75 @@
 var Team = require("../models/Team")
 
 function index(req, res){
-	console.log( "got here first team" )
+	console.log( "got here first" )
 	Team.find(function(err,teams){
 		if(err) { 
 			res.send(err)
 		} else {
-			console.log( "Got here team")
+			console.log( "Got here")
 		res.json(teams)
 	  }
 	})
 }
 
-function create(req, res){
-	var team = new Team()
-	team.team_name = req.body.team_name
-	team.uniform_color = req.body.uniform_color
-	team.number_wins = req.body.number_wins
-	// team.away_team = req.body.away_team
+// function create(req, res){
+// 	console.log("Request: " + req.body["date"]);
+// 	var arena = new Arena()
+// 	arena.name = req.body.name
+// 	arena.city = req.body.city
+// 	arena.hometeam = req.body.hometeam
+// 	// team.away_team = req.body.away_team
 
 
-	team.save(function(err){
-		// if there's an error, send back a response with an error message
-		if(err) return res.json({message: "there is a team error", error:err})
+// 	arena.save(function(err){
+// 		// if there's an error, send back a response with an error message
+// 		if(err) return res.json({message: "there is an error", error:err})
 		
-		// if there's not an error, report that an arena has been successfully created
-		res.json({message: "new team created!"})
-	})
-}
+// 		// if there's not an error, report that an arena has been successfully created
+// 		res.json({message: "new arena created!"})
+// 	})
+// }
 
 
 // function show(req,res){
-// 	User.findById(req.params.user_id, function(err, user){
+// 	Arena.findById(req.params.arena_id, function(err, arena){
 // 		if(err) res.send(err)
-// 		res.json(user)
+// 		res.json(arena)
 // 	})
 // }
 
 // function update(req, res){
 // 	// grab the user from the database
-// 	User.findById(req.params.user_id, function(err, user){
+// 	Arena.findById(req.params.arena_id, function(err, arena){
 // 		// if there's an error, tell the user
 // 		if(err) {
 // 			res.send(err)
 // 		}
 // 		// if the payload has a name, set the found user's name to be equal to it
 // 		if(req.body.name){
-// 			user.name = req.body.name
+// 			arena.name = req.body.name
 // 		}
-// 		// do the same with the username
-// 		if(req.body.username){
-// 			user.username = req.body.username
+// 		// do the same with the city
+// 		if(req.body.city){
+// 			arena.city = req.body.city
 // 		}
-// 		// ..and with the password
-// 		if(req.body.password){
-// 			user.password = req.body.password
+// 		// ..and with the hometeam
+// 		if(req.body.hometeam){
+// 			arena.hometeam = req.body.hometeam
 // 		}
-// 		// now we've changed the found user, we must remember to save it back to the DB!
-// 		user.save(function(err){
+// 		// now we've changed the found arena, we must remember to save it back to the DB!
+// 		arena.save(function(err){
 // 			if(err){
 // 				res.send(err)
 // 			}
-// 			res.json({message: "user updated"})
+// 			res.json({message: "arena updated"})
 // 		})
 // 	})
 // }
 
 // function destroy(req, res){
 // 	// delete the user with the id in the url
-// 	User.remove({_id: req.params.user_id}, function(err, user){
+// 	Arena.remove({_id: req.params.arena_id}, function(err, arena){
 // 		// tell the user if there is an error
 // 		if(err){
 // 			res.send(err)
@@ -81,8 +82,8 @@ function create(req, res){
 // }
 
 module.exports = {
-	index: index,
-	create: create
+	index: index
+	// create: create,
 	// show: show,
 	// update: update,
 	// destroy: destroy
