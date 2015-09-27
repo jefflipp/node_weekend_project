@@ -71,22 +71,22 @@ function update(req, res){
 	})
 }
 
-// function destroy(req, res){
-// 	// delete the user with the id in the url
-// 	User.remove({_id: req.params.user_id}, function(err, user){
-// 		// tell the user if there is an error
-// 		if(err){
-// 			res.send(err)
-// 		}
-// 		// else, send a success message
-// 		res.json({message: "deleted"})
-// 	})
-// }
+function destroy(req, res){
+	// delete the user with the id in the url
+	Arena.remove({_id: req.params.arena_id}, function(err, arena){
+		// tell the user if there is an error
+		if(err){
+			res.send(err)
+		}
+		// else, send a success message
+		res.json({message: "deleted"})
+	})
+}
 
 module.exports = {
 	index: index,
 	create: create,
 	show: show,
-	update: update
-	// destroy: destroy
+	update: update,
+	destroy: destroy
 }

@@ -26,7 +26,7 @@ arenaRouter.route('/:arena_id')
 	// this is the update action
 	.put(arenasController.update)
 
-// 	// this is the destroy function
-// 	.delete(arenasController.destroy)
+	// this is the destroy function
+	.delete(arenasController.destroy)
 
 module.exports = arenaRouter
