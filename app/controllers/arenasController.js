@@ -61,6 +61,10 @@ function update(req, res){
 		if(req.body.hometeam){
 			arena.hometeam = req.body.hometeam
 		}
+		// ..and with the hometeam
+		if(req.body.team){
+			arena.team = req.body.team
+		}
 		// now we've changed the found arena, we must remember to save it back to the DB!
 		arena.save(function(err){
 			if(err){

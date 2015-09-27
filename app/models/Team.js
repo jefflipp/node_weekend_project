@@ -7,7 +7,6 @@ var TeamSchema = new Schema({
 	team_name: String,
 	uniform_color: String,
 	number_wins: Number
-	// away_team: [ { type: mongoose.Schema.team_name, ref: 'Team' } ]
 })
 
 var Team = mongoose.model( 'Team', TeamSchema );

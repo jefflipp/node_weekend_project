@@ -7,8 +7,8 @@ var Schema = mongoose.Schema
 var ArenaSchema = new Schema({
 	name: String,
 	city: String,
-	hometeam: String
-	// away_team: [ { type: mongoose.Schema.team_name, ref: 'Team' } ]
+	hometeam: String,
+	team: [ { type: mongoose.Schema.ObjectId, ref: 'Team' } ]
 })
 
 var Arena = mongoose.model( 'Arena', ArenaSchema );

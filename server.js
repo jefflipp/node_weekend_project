@@ -17,6 +17,28 @@ var port = process.env.PORT || 3000;
 
 mongoose.connect('localhost:27017/weekend_project')
 
+var arena10 = new Arena({
+	name: "BofA Stadium",
+	city: "Charlotte",
+	hometeam: "Panthers",
+	team: [team10]
+
+});
+
+arena10.save();
+console.log( arena10 );
+
+var team10 = new Team({
+	team_name: "Saints",
+	uniform_color: "Gold",
+	number_wins: "0"
+
+});
+
+team10.save();
+console.log( team10 );
+
+
 // APP CONFIGURATION
 // =================
 app.use(bodyParser.urlencoded({ extended: true }))
