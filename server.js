@@ -8,7 +8,9 @@ var bodyParser = require('body-parser')//for getting the
 var morgan = require('morgan')//for logging errors
 var mongoose = require('mongoose')
 var Arena = require('./app/models/Arena')//require the Arena model
+var Team = require('./app/models/Team')
 var arenaRouter = require('./app/routes/arenaRoutes')
+var teamRouter = require('./app/routes/teamRoutes')
 // var Team = require('./app/models/Team')//require the Arena model
 var DB = process.env.MONGOLAB_URL || 'monodb://localhost:27017/weekend_project'
 var port = process.env.PORT || 3000;
@@ -24,6 +26,7 @@ app.use(morgan('dev'))
 // tell app to use apiRouter when we go to 
 // localhost:8080/api
 app.use('/arenas', arenaRouter)
+app.use('/teams', teamRouter)
 
 
 // RUN THE SERVER

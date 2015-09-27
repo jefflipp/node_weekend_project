@@ -19,14 +19,14 @@ arenaRouter.route('/')
 	.post(arenasController.create)
 
 
-// arenaRouter.route('/arena/:arena_id')
-// 	// this is the show action 
-// 	.get(arenasController.show)
+arenaRouter.route('/:arena_id')
+	// this is the show action 
+	.get(arenasController.show)
 
-// 	// this is the update action
-// 	.put(arenasController.update)
+	// this is the update action
+	.put(arenasController.update)
 
-// 	// this is the destroy function
-// 	.delete(arenasController.destroy)
+	// this is the destroy function
+	.delete(arenasController.destroy)
 
 module.exports = arenaRouter
