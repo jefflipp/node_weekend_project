@@ -1,6 +1,6 @@
 //TEAMS CONTROLLER
 
-ar Team = require("../models/Team")
+var Team = require("../models/Team")
 
 function index(req, res){
 	console.log( "got here first team" )
@@ -15,10 +15,10 @@ function index(req, res){
 }
 
 function create(req, res){
-	var arena = new Team()
+	var team = new Team()
 	team.team_name = req.body.team_name
 	team.uniform_color = req.body.uniform_color
-	team.number = req.body.number
+	team.number_wins = req.body.number_wins
 	// team.away_team = req.body.away_team
 
 

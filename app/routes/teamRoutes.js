@@ -2,11 +2,11 @@
 var express = require('express')
 var teamRouter = express.Router()
 var teamsController = require('../controllers/teamsController')
-var Arena = require('../models/Team')
+var Team = require('../models/Team')
 
 teamRouter.use(function(req,res,next){
 	// DO AUTHENTICATION HERE!
-	console.log('someone is checking us out')
+	console.log('someone is checking teams out')
 	// if not logged in res.json({message: "please log in"})
 	// else, next ()
 	next()

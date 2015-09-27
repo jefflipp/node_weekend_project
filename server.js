@@ -26,7 +26,7 @@ app.use(morgan('dev'))
 // tell app to use apiRouter when we go to 
 // localhost:8080/api
 app.use('/arenas', arenaRouter)
-app.use('/teams'), teamRouter)
+// app.use('/teams'), teamRouter)
 
 
 // RUN THE SERVER
