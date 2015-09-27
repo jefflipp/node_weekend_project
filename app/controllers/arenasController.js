@@ -17,7 +17,7 @@ function index(req, res){
 }
 
 function create(req, res){
-	console.log("Request: " + req.body["date"]);
+	
 	var arena = new Arena()
 	arena.name = req.body.name
 	arena.city = req.body.city
